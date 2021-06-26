@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, onServerPrefetch, ref } from "@vue/runtime-core"
+import { defineComponent, onServerPrefetch, ref } from "vue"
 
 export default defineComponent({
 	setup() {
