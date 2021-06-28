@@ -1,17 +1,12 @@
 <script lang="ts">
-import { defineComponent, onServerPrefetch, ref } from "vue"
+import { onServerPrefetch } from "vue"
 
-export default defineComponent({
-	setup() {
-		const data = ref("initial")
-		onServerPrefetch(async () => {
-			data.value = "server"
-		})
-		return { data }
-	},
-})
+// This causes hard crash (process exit) during SSR.
+// Note that this is not even calling the function.
+// Simply importing it (and accessing it somehow - so that it's not skipped by tree shaking) causes the problem.
+console.log(onServerPrefetch)
 </script>
 
 <template>
-	<div>data = {{ data }}</div>
+	<div>Hello</div>
 </template>
