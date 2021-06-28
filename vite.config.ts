@@ -7,7 +7,6 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			// This is somehow affecting module resolution, causing crash in SSR
-			// See also pages/index.vue
 			whatever: 'any-string-with-vite-ssr-in-it'
 		}
 	},
